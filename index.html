@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PawPal | Virtual Pet</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="#" class="logo">🐾 PawPal</a>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <span class="eyebrow">YOUR LITTLE FRIEND AWAITS</span>
+            <h1>Meet your new <span>best friend!</span></h1>
+            <p>Feed, play, and care for your virtual pet every day.</p>
+        </section>
+
+        <section class="game-layout">
+
+            <!-- PET AREA -->
+            <div class="pet-card">
+
+                <div class="pet-top">
+                    <div>
+                        <span class="small-label">YOUR COMPANION</span>
+                        <h2 id="petName">Mochi 🐱</h2>
+                    </div>
+
+                    <button id="renameBtn" class="icon-button" title="Rename pet">
+                        ✏️
+                    </button>
+                </div>
+
+                <div class="pet-scene" id="petScene">
+
+                    <div class="sun-decoration">☀️</div>
+                    <div class="cloud cloud-one">☁️</div>
+                    <div class="cloud cloud-two">☁️</div>
+
+                    <div class="pet-character" id="petCharacter">
+                        <div class="pet-emoji" id="petEmoji">🐱</div>
+                        <div class="pet-shadow"></div>
+                    </div>
+
+                    <div class="hearts" id="hearts">💗 ✨ 💗</div>
+
+                    <div class="scene-grass"></div>
+                </div>
+
+                <div class="mood-section">
+                    <div class="mood-text">
+                        <span class="mood-label">CURRENT MOOD</span>
+                        <strong id="petMood">Happy and playful 😊</strong>
+                    </div>
+
+                    <div class="mood-indicator" id="moodIndicator">😊</div>
+                </div>
+
+                <div class="pet-message" id="petMessage" aria-live="polite">
+                    Hi there! I'm Mochi. Let's be best friends! 💕
+                </div>
+
+                <div class="pet-selector">
+                    <span>CHOOSE YOUR PET</span>
+
+                    <div class="pet-options">
+                        <button class="pet-option selected"
+                                data-pet="cat"
+                                aria-label="Choose cat">🐱</button>
+
+                        <button class="pet-option"
+                                data-pet="dog"
+                                aria-label="Choose dog">🐶</button>
+
+                        <button class="pet-option"
+                                data-pet="rabbit"
+                                aria-label="Choose rabbit">🐰</button>
+
+                        <button class="pet-option"
+                                data-pet="fox"
+                                aria-label="Choose fox">🦊</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CARE AREA -->
+            <div class="care-column">
+
+                <section class="stats-card">
+                    <div class="section-heading">
+                        <div>
+                            <span class="small-label">PET HEALTH</span>
+                            <h2>How's your pet?</h2>
+                        </div>
+
+                        <span class="health-badge">💚 Care meter</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="stat-heading">
+                            <span>🍎 Hunger</span>
+                            <strong id="hungerValue">20%</strong>
+                        </div>
+
+                        <div class="progress-track">
+                            <div class="progress-fill hunger-fill"
+                                 id="hungerBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="stat-heading">
+                            <span>💖 Happiness</span>
+                            <strong id="happinessValue">85%</strong>
+                        </div>
+
+                        <div class="progress-track">
+                            <div class="progress-fill happiness-fill"
+                                 id="happinessBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="stat-heading">
+                            <span>⚡ Energy</span>
+                            <strong id="energyValue">80%</strong>
+                        </div>
+
+                        <div class="progress-track">
+                            <div class="progress-fill energy-fill"
+                                 id="energyBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="stat-heading">
+                            <span>🛁 Cleanliness</span>
+                            <strong id="cleanlinessValue">90%</strong>
+                        </div>
+
+                        <div class="progress-track">
+                            <div class="progress-fill cleanliness-fill"
+                                 id="cleanlinessBar"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="actions-card">
+                    <span class="small-label">SPEND SOME TIME TOGETHER</span>
+                    <h2>Take care of me! 🥰</h2>
+
+                    <div class="action-grid">
+                        <button class="action-button feed-action" id="feedBtn">
+                            <span class="action-icon">🍎</span>
+                            <span class="action-title">Feed</span>
+                            <small>Fill my tummy</small>
+                        </button>
+
+                        <button class="action-button play-action" id="playBtn">
+                            <span class="action-icon">🎾</span>
+                            <span class="action-title">Play</span>
+                            <small>Let's have fun</small>
+                        </button>
+
+                        <button class="action-button sleep-action" id="sleepBtn">
+                            <span class="action-icon">😴</span>
+                            <span class="action-title">Sleep</span>
+                            <small>Restore energy</small>
+                        </button>
+
+                        <button class="action-button clean-action" id="cleanBtn">
+                            <span class="action-icon">🛁</span>
+                            <span class="action-title">Clean</span>
+                            <small>Fresh and fluffy</small>
+                        </button>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- DAILY PROGRESS -->
+        <section class="daily-card">
+            <div class="daily-icon">🌟</div>
+
+            <div class="daily-content">
+                <h2>Today's Care Journey</h2>
+                <p>Every little act of kindness makes a difference.</p>
+
+                <div class="daily-progress-track">
+                    <div id="dailyProgressBar"></div>
+                </div>
+
+                <span id="dailyProgressText">0 of 5 care actions completed</span>
+            </div>
+
+            <div class="daily-count">
+                <strong id="careCount">0</strong>
+                <span>Actions</span>
+            </div>
+        </section>
+
+        <section class="reset-section">
+            <p>Your pet's progress is saved automatically. 💾</p>
+            <button id="resetBtn">↻ Start a New Game</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Made with 💜 by <strong>Simran Prawin</strong></p>
+        <p>PAWPAL · VIRTUAL PET GAME</p>
+    </footer>
+
+    <!-- Rename dialog -->
+    <dialog id="renameDialog">
+        <form id="renameForm">
+            <h2>Name your pet 🐾</h2>
+            <p>Give your little friend a name!</p>
+
+            <input
+                id="nameInput"
+                type="text"
+                maxlength="20"
+                placeholder="Enter pet name"
+                required
+            >
+
+            <div class="dialog-actions">
+                <button type="button" id="cancelRenameBtn" class="cancel-btn">
+                    Cancel
+                </button>
+
+                <button type="submit" class="save-btn">
+                    Save Name
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+</body>
+</html>
